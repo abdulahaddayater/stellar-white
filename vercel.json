@@ -1,0 +1,8 @@
+{
+  "installCommand": "npm install --prefix stellar-white-belt",
+  "buildCommand": "npm run build --prefix stellar-white-belt",
+  "outputDirectory": "stellar-white-belt/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

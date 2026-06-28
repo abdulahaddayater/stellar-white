@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stellar White Belt – Payment dApp</title>
+  <link rel="icon" href="data:," />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="hero-state" id="heroState">
+      <div class="hero-section">
+        <p class="hero-eyebrow">Level 1 · White Belt · Stellar Testnet</p>
+        <h1 class="hero-headline">Send XLM.<br>Get reactions.</h1>
+        <p class="hero-subtext">
+          Send payments on Stellar Testnet and let recipients react with emoji
+          when they receive your transfer.
+        </p>
+        <button class="primary-button" id="connectBtn">Connect Freighter Wallet</button>
+      </div>
+
+      <div class="info-panel">
+        <h2 class="panel-title">Transaction Reactions</h2>
+        <ol class="steps-list">
+          <li>Connect your wallet.</li>
+          <li>Send XLM to someone.</li>
+          <li>They pick one emoji reaction.</li>
+          <li>See reactions in your history.</li>
+        </ol>
+
+        <div class="example-box">
+          <p class="example-label">Available reactions:</p>
+          <p class="example-message">❤️ Thank You · 🎉 Celebration · 👍 Received</p>
+          <p class="example-message">🔥 Awesome · 💯 Appreciated</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-state hidden" id="actionState">
+      <div class="action-section">
+        <h1 class="action-headline">Send &amp; react</h1>
+
+        <div class="feature-tabs">
+          <button class="tab-btn active" data-tab="payment" id="tab-payment">Send Payment</button>
+          <button class="tab-btn" data-tab="history" id="tab-history">History</button>
+        </div>
+
+        <div id="balance-warning" class="hidden"></div>
+
+        <div class="tab-content" id="payment-content">
+          <div class="wallet-info-compact">
+            <span class="network-badge">Testnet</span>
+            <span class="wallet-label">Connected:</span>
+            <span class="wallet-address-short" id="walletAddressShort">—</span>
+            <span class="wallet-balance" id="balanceDisplay">0 XLM</span>
+          </div>
+
+          <div class="question-group">
+            <label class="question-label">Who is this for?</label>
+            <input id="receiver" type="text" class="question-input" placeholder="Paste their Stellar address here" />
+          </div>
+
+          <div class="question-group">
+            <label class="question-label">How much?</label>
+            <input id="amount" type="number" step="0.0000001" class="question-input" placeholder="5" />
+          </div>
+
+          <button class="primary-button" id="sendBtn">Send Payment</button>
+
+          <div id="transactionResult"></div>
+
+          <button class="text-button" id="disconnectBtn">Disconnect and start over</button>
+        </div>
+
+        <div class="tab-content hidden" id="history-content">
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <h2 class="panel-title">Transaction Reactions</h2>
+        <ol class="steps-list">
+          <li>Recipients see a React button on incoming payments.</li>
+          <li>Pick one emoji — only one per transaction.</li>
+          <li>Reactions show in history for both sides.</li>
+          <li>Social, simple, on-chain payments.</li>
+        </ol>
+
+        <div class="example-box">
+          <p class="example-label">Example in history:</p>
+          <p class="example-message">5 XLM → GABC...XYZ</p>
+          <p class="example-message">❤️ Thank You</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
